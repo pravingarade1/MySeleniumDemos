@@ -1,0 +1,34 @@
+package com.WebdriverDemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class D08LocateByCssSelector {
+
+	public static void main(String[] args) {
+		
+WebDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.facebook.com/");
+		
+		WebElement username = driver.findElement(By.cssSelector("input[data-testid=royal-email]"));
+		
+		username.sendKeys("pravingarade@yahoo.com");
+		
+		WebElement pass = driver.findElement(By.cssSelector("input[data-testid=\"royal-pass\"][placeholder=\"Password\"]")
+);		
+		pass.sendKeys("balasaheb");
+		
+		WebElement loginbtn = driver.findElement(By.cssSelector("button[type="submit"]"));
+		
+		loginbtn.click();
+		
+		
+
+	}
+
+}

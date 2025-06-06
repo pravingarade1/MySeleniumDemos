@@ -1,0 +1,33 @@
+package com.WebdriverAssignments;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class A05LocateByClassNameInvalidPass {
+
+	public static void main(String[] args) {
+		
+WebDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.facebook.com");
+		
+		WebElement username = driver.findElement(By.className("inputtext _55r1 _6luy"));
+		
+		username.sendKeys("pravingarade@yahoo.com");
+		
+		WebElement pass = driver.findElement(By.className("inputtext _55r1 _6luy _9npi"));
+		
+		pass.sendKeys("pravin123");
+		
+		WebElement loginbtn = driver.findElement(By.className("btn btn-lg btn-block btn-primary"));
+		
+		loginbtn.click();
+		
+
+	}
+
+}

@@ -1,0 +1,31 @@
+package com.WebdriverDemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class D09LocateByCssselectorSpectialChar {
+
+	public static void main(String[] args) {
+		
+WebDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.facebook.com/");
+		
+		//contains
+		WebElement username = driver.findElement(By.cssSelector("input[placeholder*=address]"));
+		
+		username.sendKeys("pravingarade@yahoo.com");
+		
+		// $ -> Start with ^ - Ends with
+		WebElement pass = driver.findElement(By.cssSelector("input[placeholder$=word]"));
+
+		pass.sendKeys("balasaheb");
+
+
+	}
+
+}

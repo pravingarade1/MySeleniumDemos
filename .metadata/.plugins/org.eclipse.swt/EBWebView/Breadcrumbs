@@ -1,0 +1,30 @@
+4:50:21 Microsoft.Shutdown.TabStripModel.CloseAllTabs
+4:50:21 Microsoft.Shutdown.TabStripModel.CloseTabs
+4:50:21 Microsoft.Shutdown.TabStripModel.CloseTabs_EdgeBeforeClosingAllTabs
+4:50:21 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl
+4:50:21 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_TabClosable
+4:50:21 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_ClosingAll
+4:50:21 Microsoft.Shutdown.TabStripModel.CloseWebContentses
+4:50:21 Microsoft.Shutdown.TabStripModel.CloseWebContentses_FastShutdown
+4:50:21 Microsoft.Shutdown.TabStripModel.ShouldRunUnloadListenerBeforeClosing_false
+4:50:21 Tab1 RenderProcessGone
+4:50:21 Microsoft.Shutdown.TabStripModel.RunUnloadListenerBeforeClosing_false
+4:50:21 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_ClosedAll
+4:50:21 Microsoft.Shutdown.TabStripModel.SendDetachWebContentsNotifications
+4:50:21 Browser1 Close Tab1 at 0
+4:50:21 Tab1 WebContentsDestroyed
+4:50:21 Microsoft.Shutdown.OnWindowClosing
+4:50:21 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:50:21 Widget Closed: BrowserFrame
+4:50:21 Microsoft.Shutdown.OnWindowClosing
+4:50:21 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:50:21 Microsoft.Browser_Removed
+4:50:21 Microsoft.Shutdown.TabStripModel.SendDetachWebContentsNotifications
+4:50:21 Browser2 Close Tab2 at 0
+4:50:21 Tab2 WebContentsDestroyed
+4:50:21 Microsoft.Shutdown.OnWindowClosing
+4:50:21 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
+4:50:21 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
+4:50:21 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:50:21 Widget Closed: BrowserFrame
+4:50:21 Microsoft.Last_Browser_Removed
