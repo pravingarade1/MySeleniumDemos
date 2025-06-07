@@ -20,9 +20,9 @@ public class A09LocateByAbsulateXpathGoogle {
 		WebElement searchbox = driver.findElement(By.xpath("/html/body/div/div[3]/form/div/div/div/div/div[2]/textarea"));
 		
 	
-		searchbox.sendKeys("Pattankodoli Yatra");
+		searchbox.sendKeys("Pattankodoli Yatra",Keys.ENTER);
 		
-		searchbox.sendKeys(Keys.ENTER);
+//		searchbox.sendKeys(Keys.ENTER);
 	
 	}
 
