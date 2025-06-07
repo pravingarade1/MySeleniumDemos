@@ -1,0 +1,29 @@
+package com.WebdriverAssignments;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class A09LocateByAbsulateXpathGoogle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		WebDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.google.com");
+		
+		WebElement searchbox = driver.findElement(By.xpath("/html/body/div/div[3]/form/div/div/div/div/div[2]/textarea"));
+		
+	
+		searchbox.sendKeys("Pattankodoli Yatra");
+		
+		searchbox.sendKeys(Keys.ENTER);
+	
+	}
+
+}
