@@ -1,0 +1,69 @@
+package com.WebdriverAssignments;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class A10CheckboxButtonDemo {
+
+	public static void main(String[] args) {
+		
+		
+WebDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://echoecho.com/htmlforms09.htm");
+		
+		
+		WebElement chkmilkbtn =driver.findElement(By.xpath("//input[@name=\"option1\"]"));
+
+		WebElement chkbutterbtn =driver.findElement(By.xpath("//input[@name=\"option2\"]"));
+		
+		WebElement chkcheesbtn =driver.findElement(By.xpath("//input[@name=\"option3\"]"));
+	
+		System.out.println("Before status of Milk Check box: ");
+		System.out.println("Selected : "+chkmilkbtn.isSelected());
+		System.out.println("Enabled : "+chkmilkbtn.isEnabled());
+		System.out.println("Displayed : "+chkmilkbtn.isDisplayed());
+		
+		
+		System.out.println("Before status of Butter Check box: ");
+		System.out.println("Selected : "+chkbutterbtn.isSelected());
+		System.out.println("Enabled : "+chkbutterbtn.isEnabled());
+		System.out.println("Displayed : "+chkbutterbtn.isDisplayed());
+		
+		System.out.println("Before status of Chees Check box: ");
+		System.out.println("Selected : "+chkcheesbtn.isSelected());
+		System.out.println("Enabled : "+chkcheesbtn.isEnabled());
+		System.out.println("Displayed : "+chkcheesbtn.isDisplayed());
+		
+		if(chkmilkbtn.isSelected()==false)
+			chkmilkbtn.click();
+		
+
+		if(chkbutterbtn.isSelected()==false)
+			chkmilkbtn.click();
+		
+
+		if(chkcheesbtn.isSelected()==false)
+			chkmilkbtn.click();
+	
+		
+		System.out.println("After status of Milk Check box: ");
+		
+		
+		System.out.println("After status of Butter Check box: ");
+		System.out.println("Selected : "+chkbutterbtn.isSelected());
+
+		
+		System.out.println("After status of Chees Check box: ");
+		System.out.println("Selected : "+chkcheesbtn.isSelected());
+
+
+
+
+	}
+
+}

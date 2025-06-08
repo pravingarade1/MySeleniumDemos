@@ -1,0 +1,43 @@
+package com.WebdriverAssignments;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class A10CheckboxButtonDemo {
+
+	public static void main(String[] args) {
+		
+		
+WebDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://echoecho.com/htmlforms09.htm");
+		
+		
+		WebElement chkmilkbtn =driver.findElement(By.xpath("/html/body/div[2]/table[9]/tbody/tr/td[4]/table/tbody/tr/td/div/span/form/table[3]/tbody/tr/td/table/tbody/tr/td/input[1]"));
+
+		WebElement chkbutterbtn =driver.findElement(By.xpath(""));
+		
+		WebElement chkcheesbtn =driver.findElement(By.xpath(""));
+		
+		System.out.println("Before : ");
+		System.out.println("Selected : "+frdbtn.isSelected());
+		System.out.println("Enabled : "+frdbtn.isEnabled());
+		System.out.println("Displayed : "+frdbtn.isDisplayed());
+		
+		
+		frdbtn.click();
+		
+		
+		System.out.println("After : ");
+		System.out.println("Selected : "+frdbtn.isSelected());
+		System.out.println("Enabled : "+frdbtn.isEnabled());
+		System.out.println("Displayed : "+frdbtn.isDisplayed());
+
+
+	}
+
+}

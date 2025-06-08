@@ -1,0 +1,53 @@
+package com.WebdriverAssignments;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class A11RadioboxButtonDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+WebDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://echoecho.com/htmlforms10.htm");
+		
+		
+		List<WebElement> listrd =driver.findElements(By.xpath("//input[@type='radio']"));
+
+	
+	
+		System.out.println("Before status of all Radio buttons: ");
+		
+		for(int i=0;i<listrd.size();i++)
+		{
+			System.out.println("Status of "+i+" Radio Button "+listrd.get(i).isSelected());
+		}
+		
+		
+		System.out.println("Perform click action on all Radio buttons: ");
+		
+		for(int i=0;i<listrd.size();i++)
+		{
+			listrd.get(i).click();
+		}
+		
+		
+		System.out.println("After click status of all Radio buttons: ");
+		
+		for(int i=0;i<listrd.size();i++)
+		{
+			System.out.println("Status of "+i+" Radio Button "+listrd.get(i).isSelected());
+		}
+			
+				
+
+	}
+
+}
