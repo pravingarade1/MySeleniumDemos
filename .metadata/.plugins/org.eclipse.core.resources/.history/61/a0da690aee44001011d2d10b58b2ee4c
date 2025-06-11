@@ -1,0 +1,46 @@
+package com.WebdriverDemo;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class D19SelectListBoxDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+WebDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://omayo.blogspot.com/");
+		
+		WebElement selectdrp= driver.findElement(By.xpath("//*[@id=\"multiselect1\"]"));
+		
+		Select selectele=new Select(selectdrp);
+		
+System.out.println("Slect First Option: "+selectele.getFirstSelectedOption().getText());
+		
+		List<WebElement> optionslist=selectele.getOptions();
+		
+		System.out.println("Total countries : "+optionslist.size());
+		int i=0;
+		for(WebElement w : optionslist)
+		{
+			System.out.println(i+"."+w.getText());
+			i++;
+		}
+		//selectele.selectByValue("172");
+		//selectele.selectByVisibleText("Qatar");
+		//selectele.selectByContainsVisibleText("tar");
+		selectele.selectByIndex(172);
+			
+
+
+		
+	}
+
+}

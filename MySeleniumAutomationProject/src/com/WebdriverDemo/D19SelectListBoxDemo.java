@@ -1,0 +1,63 @@
+package com.WebdriverDemo;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class D19SelectListBoxDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+WebDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://omayo.blogspot.com/");
+		
+		WebElement selectdrp= driver.findElement(By.xpath("//*[@id=\"multiselect1\"]"));
+		
+		Select selectele=new Select(selectdrp);
+		
+		
+		List<WebElement> optionslist=selectele.getOptions();
+		
+		System.out.println("Total cars : "+optionslist.size());
+		
+		for(WebElement w : optionslist)
+		{
+			System.out.println(w.getText());
+			
+		}
+		
+		if(selectele.isMultiple())
+		{
+			selectele.selectByIndex(1);
+			selectele.selectByIndex(3);
+		}
+		
+		List<WebElement> Selectedoptionslist=selectele.getAllSelectedOptions();
+		
+		System.out.println("Selected Optons");
+		
+		for(WebElement w : Selectedoptionslist)
+		{
+			System.out.println(w.getText());
+			
+		}
+		
+		selectele.deselectAll();
+		//selectele.deselectByValue("swiftx");
+		//selectele.deselectByVisibleText("Swift");
+		//selectele.deselectByContainsVisibleText("Sw");
+		//selectele.selectByIndex(1);
+			
+
+
+		
+	}
+
+}

@@ -1,0 +1,43 @@
+package com.WebdriverAssignments;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+/*
+ Open https://www.redbus.in/
+a.	Click on From 
+b.	Enter first 4 characters from your city (Kolhapur – kolh)
+c.	Click on the 1st option (City)
+d.	Click on To
+e.	Enter Bang (Bangalore)
+f.	Click on Bangalore from the list
+g.	Click on Calendar icon
+h.	Click on 31
+i.	Click on Search buses button
+j.	Display the 1st bus from list
+
+ */
+
+public class A13SelectRedbusDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		WebDriver driver=new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.redbus.in/");
+		
+		WebElement fromLoc= driver.findElement(By.xpath("//*[@id=\"root\"]/div[3]/div/div[1]/div/div/div[1]/div[1]/div/div[2]/div[1]/div/input"));
+		
+		fromLoc.click();
+		
+		fromLoc.sendKeys("kolh");
+		
+		
+	}
+
+}
