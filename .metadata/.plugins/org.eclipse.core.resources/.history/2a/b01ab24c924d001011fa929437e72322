@@ -1,0 +1,67 @@
+package com.WebdriverDemo;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class D27FileUploadHandling {
+
+	public static void main(String[] args) {
+		
+WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://demoqa.com/automation-practice-form");
+	
+		driver.manage().window().maximize();
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		
+		driver.findElement(By.id("firstName")).sendKeys("Pravin");
+		driver.findElement(By.id("lastName")).sendKeys("Garade");
+		driver.findElement(By.id("userEmail")).sendKeys("Pravingarade@gmail.com");
+		
+		js.executeScript("arguments[0].click()", driver.findElement(By.id("gender-radio-1")));
+		
+		driver.findElement(By.id("userNumber")).sendKeys("8390374742");
+		
+		driver.findElement(By.id("dateOfBirthInput")).sendKeys(Keys.CONTROL + "A");
+		
+		driver.findElement(By.id("dateOfBirthInput")).sendKeys("10 Mar 1988");
+		
+		driver.findElement(By.xpath("//*[@id=\"userEmail-wrapper\"]/div[1]")).click();
+		//driver.findElement(By.xpath("//*[@id=\"subjectsContainer\"]/div/div[1]/div[1]")).click();
+		
+		driver.findElement(By.id("subjectsInput")).sendKeys("H");
+		
+		js.executeScript("window.scrollBy(0,300)", "");
+		
+		js.executeScript("arguments[0].click()",driver.findElement(By.xpath("//*[@id=\"react-select-2-option-0\"]")));
+		js.executeScript("arguments[0].click()",driver.findElement(By.id("hobbies-checkbox-3")));
+		//File upload
+		driver.findElement(By.id("uploadPicture")).sendKeys("F:\\Wallpaper\\Images\\12roope -small.jpg");
+		
+		driver.findElement(By.id("currentAddress")).sendKeys("Pune");
+		driver.findElement(By.xpath("//*[@id=\"state\"]/div/div[2]/div")).click();
+		driver.findElement(By.xpath("//*[@id=\"react-select-3-option-0\"]")).click();
+		driver.findElement(By.xpath("//*[@id=\"city\"]/div/div[2]/div")).click();
+		driver.findElement(By.xpath("//*[@id=\"react-select-4-option-0\"]")).click();
+		
+		driver.findElement(By.id("submit")).submit();
+		
+		List<WebElement> table=driver.findElements(By.xpath("/html/body/div[5]/div/div/div[2]/div/table"));
+		for(WebElement t: table)
+			System.out.println(t.getText());
+		
+		
+		driver.close();
+	}
+
+}

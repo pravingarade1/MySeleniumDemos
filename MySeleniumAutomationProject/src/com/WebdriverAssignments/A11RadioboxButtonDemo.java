@@ -3,6 +3,7 @@ package com.WebdriverAssignments;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,10 +19,12 @@ WebDriver driver=new ChromeDriver();
 		
 		driver.get("https://echoecho.com/htmlforms10.htm");
 		
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,400)", "");
 		
 		List<WebElement> listrd =driver.findElements(By.xpath("//input[@type='radio']"));
 
-	
+		
 	
 		System.out.println("Before status of all Radio buttons: ");
 		

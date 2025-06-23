@@ -1,0 +1,7 @@
+Map<String, Object>pref = new HashMap<>();
+		pref.put("profile.credentials_enable_serve", false);
+		pref.put("profile.password_manager_leak_detection", false);
+		ChromeOptions op = new ChromeOptions();
+		op.setExperimentalOption("prefs", pref);
+		
+		driver = new ChromeDriver(op);
