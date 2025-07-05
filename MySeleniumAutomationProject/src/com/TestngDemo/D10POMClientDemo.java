@@ -1,0 +1,54 @@
+package com.TestngDemo;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class D10POMClientDemo {
+	
+	WebDriver driver;
+	RediffUtility rdf;
+  @Test (priority =1)
+  public void createAccount1() {
+	  rdf.setName("Pravin");
+	  rdf.setEmail("pravingarade");
+  }
+  
+  @Test (priority =2)
+  public void createAccount2() {
+	  rdf.setName("Vinayak");
+	  rdf.setEmail("Vinayakpatil");
+  }
+  
+  @BeforeMethod
+  public void refreshPage()
+  {
+	  driver.navigate().refresh();
+  }
+  @BeforeTest
+  public void beforeTest() {
+	  
+	  driver = new ChromeDriver();
+		
+	  driver.get("https://register.rediff.com/register/register.php?FormName=user_details");
+	
+		driver.manage().window().maximize();
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		rdf = new RediffUtility(driver);
+		
+
+  }
+
+  @AfterTest
+  public void afterTest() {
+	  driver.close();
+  }
+
+}

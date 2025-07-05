@@ -1,0 +1,69 @@
+package com.TestngDemo;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class D13ExcelWriteUsingDataProvider {
+	File file;
+	FileOutputStream fos;
+	XSSFWorkbook wb;
+	XSSFSheet sheet;
+	XSSFRow row;
+	XSSFCell cell;
+	int index=0;
+	
+  @Test (dataProvider = "dp")
+  public void writeExcel(String u, String p) {
+	  row = sheet.createRow(0);   // create row at 0 index
+	  row.createCell(0).setCellValue("Pravin");  // set cell value at [0,0]
+	  row.createCell(1).setCellValue("Garade");  // set cell value at [0,1]
+	  
+	  row = sheet.createRow(1);   // create row at 1 index
+	  
+	  row.createCell(0).setCellValue("Vinayak"); // set cell value at [1,0]
+	  row.createCell(1).setCellValue("Patil");   // set cell value at [1,1]
+	  
+	  row = sheet.createRow(2);   // create row at 2 index
+	  
+	  row.createCell(0).setCellValue("Pravin");  // set cell value at [2,0]
+	  row.createCell(1).setCellValue("Ahire");   // set cell value at [2,1]
+  }
+  
+  @DataProvider
+  public Object[][] dp() {
+    return new Object[][] {
+      new Object[] { "Admin", "admin123" },
+      new Object[] {  "Admin", "admin123" },
+    };
+  }
+  @BeforeTest
+  public void beforeTest() throws FileNotFoundException {
+	  
+	  file = new File("ExcelFiles/MultipleRowtExcelDataProviderFile.xlsx");
+	  fos = new FileOutputStream(file);
+	  wb = new XSSFWorkbook();
+	  sheet =wb.createSheet("My Sheet");
+	  
+  }
+
+  @AfterTest
+  public void afterTest() throws IOException {
+	  
+	  wb.write(fos);     //write data to file
+	  wb.close();
+	  fos.close();
+  }
+
+
+
+}

@@ -1,9 +1,0 @@
-package com.TestngDemo;
-
-import org.testng.annotations.Test;
-
-public class D02Before_After_Test {
-  @Test
-  public void f() {
-  }
-}

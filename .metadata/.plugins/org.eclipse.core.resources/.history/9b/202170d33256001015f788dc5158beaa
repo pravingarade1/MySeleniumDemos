@@ -1,0 +1,24 @@
+package com.TestngDemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class RediffUtility {
+	WebDriver driver;
+	
+	public RediffUtility(WebDriver d)
+	{
+		driver=d;
+	}
+	
+	public void setName(String name)
+	{
+		driver.findElement(By.xpath("/html/body/div[2]/div[2]/form/div/div[2]/input")).sendKeys(name);
+	}
+	
+	public void setEmail(String email)
+	{
+		driver.findElement(By.xpath("//*[@id=\"login4c625ab2\"]")).sendKeys(email);
+	}
+
+}

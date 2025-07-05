@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Exclude test">
+	<test name="Flipcart Test">
+		<classes>
+			<class name="com.TestngDemo.D05TestFlipcart"></class>
+			<class name="com.TestngDemo.D06DataProviderDemo"></class>
+		</classes>
+	</test>
+</suite>

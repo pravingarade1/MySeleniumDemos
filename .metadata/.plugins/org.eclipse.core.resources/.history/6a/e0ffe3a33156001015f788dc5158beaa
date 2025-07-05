@@ -1,0 +1,15 @@
+package com.TestngDemo;
+
+import org.openqa.selenium.WebDriver;
+
+public class RediffUtility {
+	WebDriver driver;
+	
+	public RediffUtility(WebDriver d)
+	{
+		driver=d;
+	}
+	
+	
+
+}

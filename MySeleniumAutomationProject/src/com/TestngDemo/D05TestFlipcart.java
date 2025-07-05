@@ -16,30 +16,30 @@ public class D05TestFlipcart {
 	
 	WebDriver driver;
 	JavascriptExecutor js;
-  @Test (priority =1)
+  @Test (priority =1, groups="Group1")
   public void testOnMobiles() {
 	  js.executeScript("arguments[0].click()", driver.findElement(By.xpath("//span[contains(text(),\"Mobiles\")]")));
   }
   
-  @Test (priority =2)
+  @Test (priority =2, groups="Group2")
   public void testOnAppliances() {
 	  js.executeScript("arguments[0].click()", driver.findElement(By.xpath("//span[starts-with(text(),\"Appliances\")]")));
   }
-  @BeforeMethod
+  @BeforeMethod(alwaysRun = true)
   public void beforeMethod() {
 	  
 	  driver.get("https://www.flipkart.com/");
 	  System.out.println("Tile : "+driver.getTitle());
   }
 
-  @AfterMethod
+  @AfterMethod(alwaysRun = true)
   public void afterMethod() {
 	  
 	  System.out.println("Tile : "+driver.getTitle());
 	  
   }
 
-  @BeforeTest
+  @BeforeTest(alwaysRun = true)
   public void beforeTest() {
 	  System.out.println("Before Test");
 		driver = new ChromeDriver();
@@ -52,7 +52,7 @@ public class D05TestFlipcart {
 	
   }
 
-  @AfterTest
+  @AfterTest(alwaysRun = true)
   public void afterTest() throws InterruptedException {
 	  
 	  Thread.sleep(2000);

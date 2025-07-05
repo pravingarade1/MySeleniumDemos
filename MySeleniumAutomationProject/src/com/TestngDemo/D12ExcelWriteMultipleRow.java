@@ -1,0 +1,58 @@
+package com.TestngDemo;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.AfterTest;
+
+public class D12ExcelWriteMultipleRow {
+	File file;
+	FileOutputStream fos;
+	XSSFWorkbook wb;
+	XSSFSheet sheet;
+	XSSFRow row;
+	
+  @Test
+  public void writeExcel() {
+	  row = sheet.createRow(0);   // create row at 0 index
+	  row.createCell(0).setCellValue("Pravin");  // set cell value at [0,0]
+	  row.createCell(1).setCellValue("Garade");  // set cell value at [0,1]
+	  
+	  row = sheet.createRow(1);   // create row at 1 index
+	  
+	  row.createCell(0).setCellValue("Vinayak"); // set cell value at [1,0]
+	  row.createCell(1).setCellValue("Patil");   // set cell value at [1,1]
+	  
+	  row = sheet.createRow(2);   // create row at 2 index
+	  
+	  row.createCell(0).setCellValue("Pravin");  // set cell value at [2,0]
+	  row.createCell(1).setCellValue("Ahire");   // set cell value at [2,1]
+  }
+  @BeforeTest
+  public void beforeTest() throws FileNotFoundException {
+	  
+	  file = new File("ExcelFiles/MultipleRowtExcelFile.xlsx");
+	  fos = new FileOutputStream(file);
+	  wb = new XSSFWorkbook();
+	  sheet =wb.createSheet("My Sheet");
+	  
+  }
+
+  @AfterTest
+  public void afterTest() throws IOException {
+	  
+	  wb.write(fos);     //write data to file
+	  wb.close();
+	  fos.close();
+  }
+
+}

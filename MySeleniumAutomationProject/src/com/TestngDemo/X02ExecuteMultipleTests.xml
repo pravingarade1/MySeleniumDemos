@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Multiple test">
+	<test name="Flipcart Test">
+		<classes>
+			<class name="com.TestngDemo.D05TestFlipcart">
+				<methods>
+					<include name="testOnAppliances"></include>
+					<include name="testOnMobiles"></include>				
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

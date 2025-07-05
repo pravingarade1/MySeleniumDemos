@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.TestngDemo.D09KeyWordDriverTest&apos; to &apos;D09KeyWordDrivenTest&apos;&#x0D;&#x0A;- Original project: &apos;MySeleniumAutomationProject&apos;&#x0D;&#x0A;- Original element: &apos;com.TestngDemo.D09KeyWordDriverTest&apos;&#x0D;&#x0A;- Renamed element: &apos;com.TestngDemo.D09KeyWordDrivenTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;D09KeyWordDriverTest&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.TestngDemo{D09KeyWordDriverTest.java[D09KeyWordDriverTest" matchStrategy="1" name="D09KeyWordDrivenTest" qualified="false" references="true" similarDeclarations="false" stamp="1751259037466" textual="false" version="1.0"/>
+</session>

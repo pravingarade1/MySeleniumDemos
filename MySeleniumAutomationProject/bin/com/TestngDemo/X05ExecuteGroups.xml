@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Exclude test">
+	<test name="Flipcart Test">
+	<groups>
+		<run>
+			<include name="Group1"></include>
+		</run>
+	</groups>
+		<classes>
+			<class name="com.TestngDemo.D05TestFlipcart"></class>
+		</classes>
+	</test>
+</suite>

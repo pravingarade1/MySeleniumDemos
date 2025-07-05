@@ -35,6 +35,7 @@ WebDriver driver = new ChromeDriver();
 		acn.dragAndDropBy(slider, slider.getLocation().x+100,slider.getLocation().y).perform();
 		
 	
+	
 
 	}
 
