@@ -16,7 +16,7 @@
     <fullyQualifiedTypeName name="org.openqa.selenium.Keys"/>
     <fullyQualifiedTypeName name="org.testng.Assert"/>
     <fullyQualifiedTypeName name="org.testng.annotations.Parameters"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
     <fullyQualifiedTypeName name="java.time.Duration"/>
     <fullyQualifiedTypeName name="io.opentelemetry.exporter.logging.SystemOutLogRecordExporter"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
 </qualifiedTypeNameHistroy>
